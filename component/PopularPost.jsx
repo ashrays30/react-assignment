@@ -18,7 +18,7 @@ class PopularPost extends React.Component {
         axios.get(`http://localhost:9000/blogs/getPosts`)
           .then(res => {
             console.log(res);
-            this.setState({ posts:res });
+            this.setState({ posts:res.data });
           });
       }
     

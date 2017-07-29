@@ -22,7 +22,7 @@ class MainContent extends React.Component {
         axios.get(`http://localhost:9000/blogs/getBlogs`)
           .then(res => {
             console.log(res);
-            this.setState({ blogData:res });
+            this.setState({ blogData:res.data });
           });
       }
 
