@@ -1,33 +1,34 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 
 class MainNav extends React.Component {
 
-	constructor(){
-        super();
+	constructor(props){
+        super(props);
         this.state = {
             tabs:[
                 {
                     name:"ABOUT",
-                    url:"#"
+                    url:"other/This is about page"
                 },
                 {
                     name:"MEMBERSHIP BENIFITS",
-                    url:"#"
+                    url:"other/This is Member benifits page"
                 },
                 {
                     name:"RESOURCES",
-                    url:"#"
+                    url:"other/This is resource page"
                 },
                 {
                     name:"BLOG",
-                    url:"#"
+                    url:""
                 },
                 {
                     name:"CONTACT",
-                    url:"#"
+                    url:"other/This is contact page"
                 },
             ],
-            activeIndex: 3,
+            activeIndex: null,
             mainNavButtons:[
                 {
                     name:"CLAIM FREE REPORT",
@@ -40,9 +41,13 @@ class MainNav extends React.Component {
             ],
             buttonActiveIndex : 0
         }
+        this.updateActiveIndex = this.updateActiveIndex.bind(this);
     }
 	
-	
+    updateActiveIndex(){
+        console.log(key);
+        this.setState({activeIndex: key});
+    }
    render() {
        var tabIndex = this.state.activeIndex;
        var buttonIndex = this.state.buttonActiveIndex;
@@ -51,7 +56,7 @@ class MainNav extends React.Component {
             <div className="main-menu container">
             <div >
              <ul>
-                    {this.state.tabs.map((tab, i) => {return <li key={i}><a className={tabIndex === i?'active':''} href={tab.url}>{tab.name}</a></li>})}
+                    {this.state.tabs.map((tab, i) => {return <li key={i}><Link className={tabIndex === i?'active':''} to={'/'+tab.url}>{tab.name}</Link></li>})}
               </ul>
 
             </div>

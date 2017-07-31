@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 class MainContent extends React.Component {
     constructor(){
@@ -40,8 +41,8 @@ class MainContent extends React.Component {
                     <div className="blog-image">
                         <img src={data.imgUrl}></img>
                     </div>
-                    <div className="blog-desc">{data.desc}</div>
-                    <div className="read-more"><a href="">Read More</a></div>
+                    <div className="blog-desc">{data.desc.substring(0,300)}</div>
+                     <div className="read-more"><Link to={'/blog/'+data._id}>Read More</Link></div>
                 </div>
                 })}
                 

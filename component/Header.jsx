@@ -1,6 +1,6 @@
 import React from 'react';
 import MainNav from './MainNav.jsx';
-import PageNav from './PageNav.jsx';
+
 
 class Header extends React.Component {
 	
@@ -8,7 +8,7 @@ class Header extends React.Component {
       return (
           <div>
             <MainNav />
-            <PageNav />
+            
         </div>
       );
    }

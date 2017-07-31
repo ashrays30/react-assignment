@@ -51,9 +51,8 @@ class PageNav extends React.Component {
 
          <div className="page-nav">
              <ul className="container">
-                    {this.state.tabs.map((tab, i) => {return <li key={i}><a className={tabIndex === i?'active':''} href={tab.url}>{tab.name}</a></li>})}
+                    {this.state.tabs.map((tab, i) => {return <li key={i}><a className={tabIndex === i?'active':''} href={tab.name}>{tab.name}</a></li>})}
               </ul>
-              
         </div>
       );
    }

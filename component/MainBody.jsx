@@ -2,6 +2,9 @@ import React from 'react';
 import BreadCums from './BreadCums.jsx';
 import MainContent from './MainContent.jsx';
 import PopularPost from './PopularPost.jsx';
+import BlogDesc from './BlogDesc.jsx';
+import PageNav from './PageNav.jsx';
+import {BrowserRouter as Router,Route, Switch} from 'react-router-dom';
 
 class MainBody extends React.Component {
     constructor(){
@@ -13,10 +16,18 @@ class MainBody extends React.Component {
     
     render(){
         return(
-            <div className="container">
-                <div>
+            
+            <div >
+                <PageNav />
+                <div className="container">
+                    
                     <BreadCums />
-                    <MainContent />
+                    <Router>
+                        <Switch>
+                                <Route exact path="/blog/:id" component={BlogDesc} />
+                                <Route exact path="/" component={MainContent} />
+                        </Switch>
+                    </Router>
                     <PopularPost />
                 </div>
                 
